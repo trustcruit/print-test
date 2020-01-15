@@ -31,7 +31,7 @@
 			<div class="col-sm-12">
 				<div class="card">
 					<div class="card-header">
-						<h2>A list that recursively promises and .then()s until 100 rows are done</h2>
+						<h2>A list that loops and gets data until 25 rows are done (approx. 12.5s)</h2>
 						<!-- <div class="actions">
 							<select id="responseRateIntervalSelect" name="response-rate-interval">
 								<option value="week">Weekly</option>
@@ -46,9 +46,10 @@
 							<button class="btn btn-inverted float-right" id="nextPeriod">Next</button> -->
 						</div>
 					</div>
-					<div class="card-body level-list-card-body">
-						<ol class="level-list row" id="responseList">
-							<li v-for="req in reqs" class="col-xs-12">Request. finished after ({{ mess }})</li>
+					<div class="card-body level-list-card-body" id="responseList">
+						<button class="btn btn-inverted float-right" @click="abortRequests()">Abort requests</button>
+						<ol class="level-list row">
+							<li v-for="req in reqs" class="col-xs-12">Request. finished after ({{ req }})</li>
 						</ol>
 					</div>
 				</div>
