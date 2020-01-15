@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Trustcruit Print Test</title>
+	<link rel="stylesheet" type="text/css" href="main.css?version=1.0.1">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="UTF-8">
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+</head>
+<body>
+	<header class="page-header">
+		<div class="container">
+			<h3>Turn candidates into promoters</h3>
+			<nav class="main-nav">
+				<ul>
+					<li><a href="https://app.trustcruit.com/admin/" target="_blank">Django</a></li>
+					<li><a href="https://dashboard.trustcruit.com/" target="_blank">Dashboard</a></li>
+					<li><a href="https://app.trustcruit.com/garage/" target="_blank">Garage</a></li>
+					<li><a href="http://livestats.s3-website-eu-west-1.amazonaws.com/" target="_blank">Livestats</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+	<div class="container">
+		<hgroup>
+			<!-- <h3>System status place</h3> -->
+			<h1>Trustcruit Print Test</h1>
+			<!-- <div class="loader active date-header" id="actionLoader"><span>Fetching latest data</span></div> -->
+		</hgroup>
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="card">
+					<div class="card-header">
+						<h2>A list that recursively promises and .then()s until 100 rows are done</h2>
+						<!-- <div class="actions">
+							<select id="responseRateIntervalSelect" name="response-rate-interval">
+								<option value="week">Weekly</option>
+								<option value="month" selected>Monthly</option>
+								<option value="quarter">Quarterly</option>
+								<option value="year">Yearly</option>
+							</select>
+						</div> -->
+						<div class="card-info text-center">
+							<!-- <button class="btn btn-inverted float-left" id="previousPeriod">Previous</button>
+							<span class="h2" id="periodLabel">Loading...</span>
+							<button class="btn btn-inverted float-right" id="nextPeriod">Next</button> -->
+						</div>
+					</div>
+					<div class="card-body level-list-card-body">
+						<ol class="level-list row" id="responseList">
+							<li v-for="req in reqs" class="col-xs-12">Request. finished after ({{ mess }})</li>
+						</ol>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="main.js?version=1.0.1"></script>
+</body>
+</html>
