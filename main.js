@@ -1,11 +1,6 @@
 const FETCH_URL = 'https://api.trustcruit.com/shinyform/api/answers/stats_global/?question=405';
 const FETCH_OPTIONS = {
   method: 'GET',
-  mode : 'no-cors',
-  headers: {
-    'Access-Control-Allow-Origin': '*'
-    // 'Content-Type': 'application/json'
-  },
 };
 
 const app = new Vue({
