@@ -1,2 +1,3 @@
-# Trustcruit live
-## A system status place for Trustcruit
+# Trustcruit Print Test
+
+Nothing more than a stress test for Sejda or other HTML to PDF converters

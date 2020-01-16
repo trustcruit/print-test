@@ -25,13 +25,12 @@
 		<hgroup>
 			<!-- <h3>System status place</h3> -->
 			<h1>Trustcruit Print Test</h1>
-			<!-- <div class="loader active date-header" id="actionLoader"><span>Fetching latest data</span></div> -->
 		</hgroup>
 		<div class="row">
 			<div class="col-sm-12">
 				<div class="card">
 					<div class="card-header">
-						<h2>A list that loops and gets data until 25 rows are done (approx. 12.5s)</h2>
+						<h2>A list that loops and gets data until 101 rows are done (approx. 60 s)</h2>
 						<!-- <div class="actions">
 							<select id="responseRateIntervalSelect" name="response-rate-interval">
 								<option value="week">Weekly</option>
@@ -47,9 +46,10 @@
 						</div>
 					</div>
 					<div class="card-body level-list-card-body" id="responseList">
-						<button class="btn btn-inverted float-right" @click="abortRequests()">Abort requests</button>
+						<button class="btn btn-inverted" @click="abortRequests()">Abort requests</button>
+						<div class="loader date-header" :class="{ active: isFetching  }" ref="actionLoader"><span>Fetching latest data</span></div>
 						<ol class="level-list row">
-							<li v-for="req in reqs" class="col-xs-12">Request. finished after ({{ req }})</li>
+							<li v-for="req in reqs" class="col-xs-12">Request promise returned. ({{ req }})</li>
 						</ol>
 					</div>
 				</div>

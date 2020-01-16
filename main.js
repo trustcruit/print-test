@@ -13,7 +13,8 @@ const app = new Vue({
   data: {
     reqs: [],
     startTime: Date.now(),
-    fetchThisMany: 25,
+    fetchThisMany: 100,
+    isFetching: false,
   },
   mounted() {
     this.init();
@@ -26,7 +27,8 @@ const app = new Vue({
       return fetch(FETCH_URL, FETCH_OPTIONS)
       .then(response => {
         console.log(response);
-        return `time: ${(Date.now() - this.startTime) / 1000}s | status: ${response.status}`
+        let cors = response.type === 'opaque' ? ' | has CORS issues' : '';
+        return `time: ${(Date.now() - this.startTime) / 1000}s | status: ${response.status}${cors}`
         // return response.text()
       })
       // .then((data) => {
@@ -43,14 +45,15 @@ const app = new Vue({
       });
     },
     init() {
-      this.reqs.push('ya');
-
+      this.reqs.push('Initial test, not a real request made here');
+      this.isFetching = true;
       (async () => {
         for (let i = 0; i < this.fetchThisMany; i++) {
+          console.log('going to fetch next. Currently on: ', i);
           this.reqs.push(await this.fetchOne());
-          console.log('going to next. is on: ', i);
         }
       })();
+      this.isFetching = false;
     }
   },
 });

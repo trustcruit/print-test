@@ -362,11 +362,7 @@ strong {
 	li {
 		border-right: $thin-border;
 		border-bottom: $thin-border;
-		padding: $gutter*2;
-
-		&:nth-child(3n) {
-			border-right: none;
-		}
+		padding: $gutter/2;
 	}
 }
 
@@ -428,7 +424,7 @@ strong {
 		padding: $gutter $gutter*2;
 
 		&.level-list-card-body {
-			padding-top: 0;
+			// padding-top: 0;
 			padding-bottom: 0;
 		}
 	}
